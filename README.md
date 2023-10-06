@@ -1,3 +1,3 @@
-REACT BAŞLANGIÇ PROJESİ
+# React Başlangıç Projesi
 
-Bu proje, bir react projesi oluşturarak github a yükleme ve react.js konusunda çalışma yapmak için yapılmıştır.
+Bu kodlar, bir react projesine başlangıç için gerekli olan paketlerden oluşan bir başlangıç setidir.
