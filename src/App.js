@@ -1,5 +1,8 @@
-import './style.scss'
-import { createElement } from "react"
+import './tailwind.css'
+// import { createElement } from "react"
+import Button from './components/Button'
+import Tab from './components/Tab'
+
 
 
 
@@ -22,7 +25,19 @@ function App() {
   
 
   return (
-   <main id='main' className='test'>
+   <>
+    
+   <div style = {{padding: 20}}>
+    <Tab/>
+   </div>
+
+
+    <div style={{padding: 20}}>
+    <Button text="Buton Örneği"/>
+    <Button text="Buton Örneği" variant="success"/>
+    <Button text="Buton Örneği" variant="danger"/>
+    <Button text="Buton Örneği" variant="warning"/>
+    </div>
     <h1 tabIndex="3"style={{color:'red', backgroundColor:'yellow'}}>mrTuranDeveloper</h1>
     <label htmlFor="search" tabIndex="2" onClick={searchFunction}>ARAMA</label>
     <input type="text" id='search' tabIndex="1" />
@@ -34,7 +49,7 @@ function App() {
         </li>
       ))}
     </ul>
-   </main>
+   </>
   );
 }
 
