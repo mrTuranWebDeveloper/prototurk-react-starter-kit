@@ -1,7 +1,7 @@
 import './tailwind.css'
-// import { createElement } from "react"
 import Button from './components/Button'
 import Tab from './components/Tab'
+import { useState } from 'react'
 
 
 
@@ -11,6 +11,8 @@ import Tab from './components/Tab'
 function App() {
 
   const todos = ['todo1', 'todo2', 'todo3']
+
+  const [activeTab, setActiveTab] = useState(1)
   // const h1 = createElement('h1', null, 'mrTuranDeveloper')
   // const ul = createElement('ul', null, todos.map(todo => createElement('li', null, todo)))
   // return createElement('main', {
@@ -28,7 +30,14 @@ function App() {
    <>
     
    <div style = {{padding: 20}}>
-    <Tab/>
+    <button onClick={()=> setActiveTab(2)}>
+      Aktif Tabı Değiştir
+    </button>
+    <Tab activeTab={activeTab} setActiveTab={setActiveTab}>
+      <Tab.Panel title="Profil">1. Tab</Tab.Panel>
+      <Tab.Panel title="Hakkında">2. Tab</Tab.Panel>
+      <Tab.Panel title="Ayarlar">3. Tab</Tab.Panel>
+    </Tab>
    </div>
 
 
