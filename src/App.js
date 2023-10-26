@@ -3,24 +3,45 @@
 // import Tab from './components/Tab'
 // import { useState } from 'react'
 // import Test from './components/Test'
-import { useRef } from "react";
+import { forwardRef, useRef } from "react";
 
-  const inputRef = useRef()
-  const focusInput = () => {
+const Input = forwardRef((props, ref) => {
+  return <input ref={ref} type="text" {...props} />;
+  console.log(forwardRef);
+});
 
-  }
 
 
+//   const inputRef = useRef()
+//   const focusInput = () => {
+
+//   }
 
 function App() {
 
+  const inputRef = useRef()
+  const focusInput = () => {
+    inputRef.current.focus()
+  }
+
   return (
     <>
-      <h1>useRef()-useForward()</h1>
-      <input type="text" />
-      <button onClick={focusInput}>Fokusla</button>
+      <h1>useRef() - useForward()</h1>
+      <Input ref={inputRef} />
+      <button onClick={focusInput}>Focusla</button>
     </>
   )
+}
+
+// function App() {
+
+//   return (
+//     <>
+//       <h1>useRef()-useForward()</h1>
+//       <input type="text" />
+//       <button onClick={focusInput}>Fokusla</button>
+//     </>
+//   )
 
   // const [show, setShow] = useState(false)
   // return (
@@ -81,6 +102,6 @@ function App() {
 //     </ul>
 //    </>
 //   );
-}
+// }
 
 export default App;
