@@ -1,26 +1,36 @@
 // import './tailwind.css'
 // import Button from './components/Button'
 // import Tab from './components/Tab'
-import { useState } from 'react'
-import Test from './components/Test'
+// import { useState } from 'react'
+// import Test from './components/Test'
+import { useRef } from "react";
 
+  const inputRef = useRef()
+  const focusInput = () => {
 
-
-
+  }
 
 
 
 function App() {
 
-  const [show, setShow] = useState(false)
   return (
     <>
-      <button onClick={()=> setShow(show => !show)}>
-        {show ? 'Gizle' : 'Göster'}
-      </button>
-      {show && <Test />}
+      <h1>useRef()-useForward()</h1>
+      <input type="text" />
+      <button onClick={focusInput}>Fokusla</button>
     </>
   )
+
+  // const [show, setShow] = useState(false)
+  // return (
+  //   <>
+  //     <button onClick={()=> setShow(show => !show)}>
+  //       {show ? 'Gizle' : 'Göster'}
+  //     </button>
+  //     {show && <Test />}
+  //   </>
+  // )
   // const todos = ['todo1', 'todo2', 'todo3']
 
   // const [activeTab, setActiveTab] = useState(1)
